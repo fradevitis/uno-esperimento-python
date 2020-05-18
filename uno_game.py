@@ -1,5 +1,5 @@
+colori = ["rosso", "verde", "blu", "giallo"]
 def GenerateDeck():
-    colori = ["rosso", "verde", "blu", "giallo"]
     newDeck = []
     for colore in colori:
         for numero in range(0, 11):
@@ -8,4 +8,14 @@ def GenerateDeck():
 
 
 myDeck = GenerateDeck()
+
+def anotherDeck():
+    secondDeck=[]
+    for colore in colori:
+        for numero in range(1,11):
+            secondDeck.append(str(numero)+" "+ colore)
+    return secondDeck
+secondDeck=anotherDeck()
+myDeck.append(secondDeck)
 print(myDeck)
+
