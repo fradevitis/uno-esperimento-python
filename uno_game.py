@@ -1,4 +1,3 @@
-completeDeck=[]
 colori = ["rosso", "verde", "blu", "giallo"]
 def GenerateDeck():
     newDeck = []
@@ -17,6 +16,6 @@ def anotherDeck():
             secondDeck.append(str(numero)+" "+ colore)
     return secondDeck
 secondDeck=anotherDeck()
+myDeck.append(secondDeck)
+print(myDeck)
 
-completeDeck.extend(myDeck+secondDeck)
-print(completeDeck)
