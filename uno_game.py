@@ -51,4 +51,5 @@ initHands()
 print(myHand)
 print(hisHand)
 
+#solo alberto può modificare
 
