@@ -18,5 +18,5 @@ def anotherDeck():
     return secondDeck
 secondDeck=anotherDeck()
 
-completeDeck.extend(myDeck+secondDeck)
+completeDeck=myDeck+secondDeck
 print(completeDeck)
