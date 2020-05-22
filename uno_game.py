@@ -19,9 +19,9 @@ def generateDeck():
     c=0
     for color in colors:
         while c<2:
-            newDeck.append(color + " stop")
-            newDeck.append(color + " invert")
-            newDeck.append(color + " +2")
+            newDeck.append("special " + color + " stop")
+            newDeck.append("special " + color + " invert")
+            newDeck.append("special " + color + " +2")
             c+=1
     random.shuffle(newDeck)
     return newDeck
@@ -51,5 +51,30 @@ initHands()
 print(myHand)
 print(hisHand)
 
-#solo alberto può modificare
+lastThrow = myDeck.pop(0)
+print("Ultima carta buttata: " + lastThrow)
+
+def CheckAction(card): # card = 5 rosso
+    splittedCard = card.split(" ")
+    print(splittedCard)
+    splittedLastThrow = lastThrow.split(" ")
+    print(splittedLastThrow)
+    if splittedCard[0] == splittedLastThrow[0] or splittedCard[1] == splittedLastThrow[1]:
+        print("puoi buttare " + card)
+        return True
+    else:
+        return False
+    
+
+def PlayerAction():
+    print("In mano hai: ")
+    for x in range(0, len(myHand)):
+        print(str(x) + " " +  myHand[x])
+    action = int(input("inserisci il numero della carta che vuoi buttare "))
+    if CheckAction(myHand[action]) == True:
+        print("Carta giocata")
+    else:
+        print("La carta non puo essere giocata")
+
+PlayerAction()
 
